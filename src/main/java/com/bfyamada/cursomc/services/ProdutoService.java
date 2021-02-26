@@ -25,7 +25,7 @@ public class ProdutoService {
 	@Autowired
 	private CategoriaRepository categotiaRepository;
 	
-	public Produto buscar(Integer id){
+	public Produto find(Integer id){
 		
 		Optional<Produto> obj = repo.findById(id);
 		
