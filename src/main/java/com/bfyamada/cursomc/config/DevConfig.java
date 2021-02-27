@@ -23,15 +23,10 @@ public class DevConfig {
 	@Bean
 	public boolean instantiateDatabase() throws ParseException {
 		
-		System.out.println("Iniciando processo ...");
-		
 		if(!"create".equals(strategy)) {
-			
-			System.out.println("Strategy diferente de CREATE ...");
 			return false;
 		}
 		dbService.instantiateDatabase();
-		System.out.println("Strategy igual de CREATE ...");
 		return true;
 		
 	}
