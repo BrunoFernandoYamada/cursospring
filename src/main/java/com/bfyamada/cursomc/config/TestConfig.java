@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Profile;
 import java.text.ParseException;
 
 import com.bfyamada.cursomc.services.DBService;
+import com.bfyamada.cursomc.services.EmailService;
+import com.bfyamada.cursomc.services.MockEmailService;
 
 @Configuration
 @Profile("test")
@@ -17,11 +19,14 @@ public class TestConfig {
 	
 	@Bean
 	public boolean instantiateDatabase() throws ParseException {
-		
 		dbService.instantiateDatabase();
-		
 		return true;
-		
+
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new MockEmailService();
 	}
 
 }
